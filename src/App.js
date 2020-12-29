@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router ,Route} from 'react-router-dom';
+// import '../bootstrap-4.3.1-dist/css/bootstrap.min.css';
+import Home from './pages/home';
+import AddCar from './pages/add-car';
+import GetCar from './pages/get-car';
+import ReturnCar from './pages/return-car';
+import SubmitDeatels from './pages/submit-deatels';
+import Header from './components/header'
+import './app.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+      <Router> 
+         <Header />
+         <Route path="/" exact component={Home} />
+         <Route path="/add-car" exact component={AddCar} />
+         <Route path="/get-car" exact component={GetCar} />
+        
+      
+     <Route path="/return-car" exact component={ReturnCar} />
+      <Route path="/submit-deatels" exact component={SubmitDeatels} />
+      </Router>
+     </div>
+)}
 
 export default App;
